@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk242cyvqrg65"]
+
+[ext_resource type="Script" path="res://scenes/AreaTrigger.gd" id="1_agt4d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fmrnx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ke2vy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsufs"]
+albedo_color = Color(0.688106, 0.881719, 0.408846, 1)
+
+[node name="AreaTrigger" type="Area3D"]
+script = ExtResource("1_agt4d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fmrnx")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("SphereMesh_ke2vy")
+material = SubResource("StandardMaterial3D_bsufs")
+
+[connection signal="body_entered" from="." to="." method="_on_AreaTrigger_body_entered"]

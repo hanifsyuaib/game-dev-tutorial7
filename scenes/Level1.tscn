@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://vac1qxwvojl6"]
+
+[ext_resource type="PackedScene" uid="uid://c3uubiy8lhwts" path="res://scenes/Player.tscn" id="1_4852m"]
+[ext_resource type="PackedScene" uid="uid://cedr2mr1pahnj" path="res://scenes/World1.tscn" id="2_m010t"]
+[ext_resource type="PackedScene" uid="uid://dk242cyvqrg65" path="res://scenes/AreaTrigger.tscn" id="3_26mas"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4852m")]
+
+[node name="World1" parent="." instance=ExtResource("2_m010t")]
+
+[node name="WinAreaTrigger" parent="." instance=ExtResource("3_26mas")]
+transform = Transform3D(4.76901, 0, 0, 0, 4.76901, 0, 0, 0, 4.76901, 0.824341, -3.27606, 69.2144)
+sceneName = "WinScreen"
+
+[node name="LoseAreaTrigger" parent="." instance=ExtResource("3_26mas")]
+transform = Transform3D(38.6286, 0, 0, 0, 38.6286, 0, 0, 0, 38.6286, 0, -27.5176, 38.9591)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+omni_range = 33.269
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 54)
+omni_range = 31.563
